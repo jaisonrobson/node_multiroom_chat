@@ -141,6 +141,8 @@
 					</div>`;
 
 				$('#dialogos').append(html);
+
+				window.scrollTo(document.body.scrollHeight);
 			});
 
 			socket.on('participantesParaCliente', function(data) {
