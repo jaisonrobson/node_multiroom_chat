@@ -4,4 +4,12 @@ var server = app.listen(80, function() {
     console.log("servidor online");
 });
 
-require('socket.io').listen(server);
+var io = require('socket.io').listen(server);
+
+io.on('connection', function(socket) {
+    console.log('Usuario conectado');
+
+    socket.on('disconnect', function() {
+        console.log('Usuario desconectou');
+    });
+});
